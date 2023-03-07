@@ -1,14 +1,35 @@
 <!DOCTYPE html>
-<html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page title</title>
-    <link rel="stylesheet" href="./sass/index.scss" />
-    <script type="module" src="./index.js"></script>
-  </head>
-  <body>
-    <!-- ❗️❗️❗️ Add partials like so for every page -->
-    <include src="./partials/example.html"></include>
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/gallery.css">
+</head>
+<body class="page">
+    <section class="gallery-search">
+      <div class="container">
+        <div class="wrapper">
+          <form class="search-form" id="search-form">
+              <input
+                type="text"
+                name="searchQuery"
+                autocomplete="off"
+                placeholder="  Search images..."
+              />
+              <button type="submit">🔍</button>
+            </form>
+        </div>
+      </div>
+    </section>
+    <section class="gallery-tiles">
+      <div class="container">
+        <div class="target-element"></div>
+        <ul class="gallery js-gallery list"></ul>
+        <button type="button" class="is-hidden load-more js-load-more">LOAD MORE</button>
+      </div>
+    </section>
+    <script src="./js/gallery.js" type="module"></script>
+</body>
 </html>
