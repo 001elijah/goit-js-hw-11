@@ -2,7 +2,7 @@ function getPictureMarkup({ webformatURL, largeImageURL, tags, likes, views, com
     return `
             <div class="gallery">
                 <div class="photo-card">
-                    <img src="${webformatURL}" alt="" loading="lazy" />
+                    <img src="${webformatURL}" alt="${tags}" loading="lazy" />
                     <div class="info">
                         <p class="info-item">
                             <b>Likes:</b>${likes}

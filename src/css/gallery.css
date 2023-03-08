@@ -82,6 +82,7 @@ img {
 
 .search-form > input {
     border-radius: 5px;
+    padding-left: 10px;
     width: 100%;
     height: 34px;
     border: none;
@@ -108,4 +109,35 @@ img {
     background-color: #3268a8;
     border-radius: 5px;
     border: none;
+}
+
+.gallery-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; 
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.photo-card {
+  width: 26vw;
+}
+
+.info {
+  display: flex;
+  gap: 10px;
+  justify-content: space-around;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.photo-card {
+  box-shadow: 1px 1px 1px grey;
+  border-radius: 5px;
 }
