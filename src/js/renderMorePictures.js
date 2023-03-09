@@ -1,22 +1,22 @@
-import getPictures from "./api/requests/getPictures";
+import { refs } from "./refs";
 import getPictureMarkup from "./getPictureMarkup";
 import { refs } from "./refs";
 import Notiflix from 'notiflix';
+import { searchParams } from "./api/const";
 
+const { loadMoreBtn } = refs;
 const { galleryList : galleryListElem, form } = refs;
 
-function renderPictures({ hits, totalHits }) {
-
+function renderMorePictures({ hits }) {
     if (hits.length === 0) {
         form.reset();
-        galleryListElem.replaceChildren();
-        Notiflix.Notify.failure('Sorry, there are no images matching your search query. Please try again')
+        loadMoreBtn.classList.remove('load-more');
+        searchParams.set('page', 1);
+        Notiflix.Notify.failure('Sorry, there left no images. Please try another query')
         return;
     };
-    Notiflix.Notify.success(`Hooray! We found ${totalHits} images`);
-    galleryListElem.replaceChildren();
     const galleryTemplates = hits.map(picture => getPictureMarkup(picture)).join('');
     galleryListElem.insertAdjacentHTML('beforeend', galleryTemplates);
 };
 
-export default renderPictures;
+export default renderMorePictures;
