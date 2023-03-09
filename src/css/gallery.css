@@ -40,6 +40,10 @@ img {
   height: auto;
 }
 
+input:focus {
+    outline: none;
+}
+
 .container {
   width: 100%;
   padding-left: 15px;

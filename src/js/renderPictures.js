@@ -3,7 +3,7 @@ import getPictureMarkup from "./getPictureMarkup";
 import { refs } from "./refs";
 import Notiflix from 'notiflix';
 
-const { galleryList : galleryListElem, form } = refs;
+const { galleryList : galleryListElem, form, loadMoreBtn } = refs;
 
 function renderPictures({ hits, totalHits }) {
 
@@ -11,6 +11,7 @@ function renderPictures({ hits, totalHits }) {
         form.reset();
         galleryListElem.replaceChildren();
         Notiflix.Notify.failure('Sorry, there are no images matching your search query. Please try again')
+        loadMoreBtn.classList.remove('load-more');
         return;
     };
     Notiflix.Notify.success(`Hooray! We found ${totalHits} images`);
