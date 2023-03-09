@@ -12,7 +12,7 @@ function renderMorePictures({ hits }) {
         form.reset();
         loadMoreBtn.classList.remove('load-more');
         searchParams.set('page', 1);
-        Notiflix.Notify.failure('Sorry, there left no images. Please try another query')
+        Notiflix.Notify.failure('We\'re sorry, but you\'ve reached the end of search results.')
         return;
     };
     const galleryTemplates = hits.map(picture => getPictureMarkup(picture)).join('');

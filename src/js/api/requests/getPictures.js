@@ -12,7 +12,6 @@ function getPictures(evt) {
     searchParams.set('page', 1);
     const query = evt.currentTarget.searchQuery.value;
     sessionStorage.setItem('query', `${query}`);
-    console.log(sessionStorage.getItem('query'));
     if (query === '') {
         Notiflix.Notify.info('Please type your search query to see results');
         return;
@@ -22,8 +21,6 @@ function getPictures(evt) {
         if (!response.ok) {
             throw new Error ('ERROR');
         }
-
-        console.log(searchParams.get('page'));
         loadMoreBtn.classList.add('load-more');
         return response.json();
     })
