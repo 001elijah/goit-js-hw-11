@@ -13,7 +13,7 @@ html {
 
 .page {
     margin: 0;
-    background-color: #FFFFFF;
+    background-color: #e6e9ed;
     color: #757575;
 }
 
@@ -124,13 +124,20 @@ input:focus {
 }
 
 .photo-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   width: 26vw;
+  height: 100%;
+  box-shadow: 1px 1px 1px grey;
+  border-radius: 5px;
+  background-color: #fff;
 }
 
 .info {
   display: flex;
   gap: 10px;
-  justify-content: space-around;
+  justify-content: space-evenly;
   padding-top: 15px;
   padding-bottom: 15px;
 }
@@ -141,7 +148,7 @@ input:focus {
   align-items: center;
 }
 
-.photo-card {
-  box-shadow: 1px 1px 1px grey;
-  border-radius: 5px;
+.gallery a {
+  text-decoration: none;
+  color: grey;
 }

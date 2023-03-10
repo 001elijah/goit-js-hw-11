@@ -17,6 +17,7 @@ function renderMorePictures({ hits }) {
     };
     const galleryTemplates = hits.map(picture => getPictureMarkup(picture)).join('');
     galleryListElem.insertAdjacentHTML('beforeend', galleryTemplates);
+    new SimpleLightbox('.gallery a', { captionDelay: 250 });
 };
 
 export default renderMorePictures;

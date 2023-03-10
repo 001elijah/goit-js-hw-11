@@ -19,8 +19,8 @@ async function getPictures(evt) {
     };
     try {
         const response = await axios.get(`${BASE_URL}?${searchParams}&q=${query}`);
-        const showBtn = await loadMoreBtn.classList.add('load-more');
-        const render = await renderPictures(response.data);
+        loadMoreBtn.classList.add('load-more');
+        renderPictures(response.data);
     } catch (error) {
         Notiflix.Notify.failure('Sorry, there are no images matching your search query. Please try again')
         loadMoreBtn.classList.remove('load-more');
